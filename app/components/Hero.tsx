@@ -32,7 +32,12 @@ export default function Hero() {
             Da primeira consulta aos cuidados da vida adulta, nossa proposta é
             ouvir com atenção e explicar cada etapa do atendimento.
           </p>
-
+          <a
+            href="#especialidades"
+            className="mt-6 inline-flex min-h-11 items-center rounded-xl border border-charcoal px-4 py-2 text-sm font-semibold text-charcoal hover:bg-blush focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            Ver especialidades
+          </a>
           <p className="mt-5 text-sm text-muted">
             Clínica odontológica fictícia · Projeto de portfólio
           </p>
