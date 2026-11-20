@@ -14,10 +14,20 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+const title = "NexuCare Odontologia | Projeto de clínica fictícia";
+const description =
+  "Landing page de portfólio para uma clínica odontológica fictícia em Capanema, Pará. Explore tratamentos, atendimento por idade e o agendamento demonstrativo.";
+
 export const metadata: Metadata = {
-  title: "NexuCare Odontologia | Cuidado para toda a família",
-  description:
-    "Projeto de portfólio da NexuCare Odontologia, clínica fictícia com uma proposta de cuidado acolhedor para bebês, crianças e adultos.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    siteName: "NexuCare Odontologia",
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
