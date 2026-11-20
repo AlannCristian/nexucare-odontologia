@@ -1,0 +1,63 @@
+import {
+  ClipboardList,
+  HeartHandshake,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
+
+const pillars = [
+  { title: "Atendimento humanizado", icon: HeartHandshake },
+  { title: "Estética natural", icon: Sparkles },
+  { title: "Biossegurança", icon: ShieldCheck },
+  { title: "Clareza no plano", icon: ClipboardList },
+];
+
+export default function Hero() {
+  return (
+    <section aria-labelledby="hero-title">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+        <div>
+          <p className="inline-flex rounded-xl bg-blush px-3 py-2 text-sm font-semibold leading-relaxed text-charcoal">
+            Atendimento especializado para bebês, crianças e adultos
+          </p>
+
+          <h1
+            id="hero-title"
+            className="mt-5 font-heading text-4xl font-bold leading-tight tracking-tight text-charcoal sm:text-5xl"
+          >
+            Cuidado próximo, estética natural e confiança em cada sorriso.
+          </h1>
+
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+            Da primeira consulta aos cuidados da vida adulta, nossa proposta é
+            ouvir com atenção e explicar cada etapa do atendimento.
+          </p>
+
+          <p className="mt-5 text-sm text-muted">
+            Clínica odontológica fictícia · Projeto de portfólio
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-soft-border bg-white p-6 shadow-sm sm:p-8">
+          <h2 className="font-heading text-xl font-bold text-charcoal">
+            Como cuidamos de você
+          </h2>
+
+          <ul className="mt-5 space-y-4">
+            {pillars.map(({ title, icon: Icon }) => (
+              <li
+                key={title}
+                className="flex items-center gap-3 text-sm font-semibold"
+              >
+                <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-blush text-charcoal">
+                  <Icon aria-hidden="true" className="size-5" />
+                </span>
+                {title}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
