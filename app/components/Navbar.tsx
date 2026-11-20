@@ -5,6 +5,8 @@ const links = [
   { href: "#familia", label: "Para toda a família" },
   { href: "#especialidades", label: "Especialidades" },
   { href: "#sobre", label: "Sobre a clínica" },
+  { href: "#localizacao", label: "Localização" },
+  { href: "#agendamento", label: "Agendar Avaliação" },
 ];
 
 export default function Navbar() {
@@ -28,7 +30,11 @@ export default function Navbar() {
             <a
               key={href}
               href={href}
-              className="inline-flex min-h-11 items-center rounded-xl px-2 text-sm font-semibold text-charcoal hover:bg-blush focus-visible:outline-2 sm:px-3"
+              className={`inline-flex min-h-11 items-center rounded-xl px-2 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:px-3 ${
+                href === "#agendamento"
+                  ? "bg-charcoal text-white hover:bg-ink"
+                  : "text-charcoal hover:bg-blush"
+              }`}
             >
               {label}
             </a>
