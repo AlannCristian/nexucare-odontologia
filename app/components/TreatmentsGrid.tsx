@@ -25,17 +25,23 @@ export default function TreatmentsGrid() {
       className="scroll-mt-36"
     >
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <h2
-          id="treatments-title"
-          className="font-heading text-3xl font-bold text-charcoal sm:text-4xl"
-        >
-          Especialidades e tratamentos
-        </h2>
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#80535e]">
+            Especialidades
+          </p>
+
+          <h2
+            id="treatments-title"
+            className="mt-3 font-heading text-3xl font-bold tracking-tight text-charcoal sm:text-4xl"
+          >
+            Tratamentos pensados para o seu sorriso
+          </h2>
+        </div>
 
         <div
           role="group"
           aria-label="Filtrar tratamentos"
-          className="mt-6 flex flex-wrap gap-2"
+          className="mt-8 flex flex-wrap justify-center gap-2"
         >
           {treatmentCategories.map((category) => {
             const isSelected = selectedCategory === category.id;
@@ -46,7 +52,7 @@ export default function TreatmentsGrid() {
                 type="button"
                 aria-pressed={isSelected}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`min-h-11 rounded-xl border px-4 py-2 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 ${
+                className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 ${
                   isSelected
                     ? "border-charcoal bg-charcoal text-white"
                     : "border-soft-border bg-white text-charcoal hover:bg-blush"
@@ -58,7 +64,7 @@ export default function TreatmentsGrid() {
           })}
         </div>
 
-        <p role="status" className="mt-4 text-sm text-muted">
+        <p role="status" className="mt-4 text-center text-sm text-muted">
           {visibleTreatments.length} tratamentos encontrados
         </p>
 
@@ -73,6 +79,9 @@ export default function TreatmentsGrid() {
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
                 {treatment.description}
+              </p>
+              <p className="mt-4 inline-flex rounded-full bg-blush px-3 py-1 text-xs font-semibold text-[#80535e]">
+                {treatmentCategories.find(({ id }) => id === treatment.category)?.label}
               </p>
             </li>
           ))}
