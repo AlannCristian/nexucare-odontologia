@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { HeartHandshake, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { href: "#inicio", label: "Início" },
@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-20 border-b border-soft-border bg-cream"
+      className="sticky top-0 z-20 border-b border-soft-border bg-cream/95 backdrop-blur-sm"
       onKeyDown={(event) => {
         if (event.key === "Escape" && isOpen) {
           setIsOpen(false);
@@ -26,13 +26,16 @@ export default function Navbar() {
         }
       }}
     >
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 px-5 py-3 sm:px-8">
+      <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 px-5 py-3 lg:px-8 xl:grid-cols-[auto_minmax(0,1fr)]">
         <a
           href="#inicio"
           onClick={() => setIsOpen(false)}
-          className="inline-flex min-h-11 items-center gap-2 rounded-xl text-charcoal focus-visible:outline-2 focus-visible:outline-offset-4"
+          className="inline-flex min-h-11 w-fit items-center gap-3 rounded-xl text-charcoal focus-visible:outline-2 focus-visible:outline-offset-4"
         >
-          <HeartHandshake aria-hidden="true" className="size-6 shrink-0" />
+          <span aria-hidden="true" className="relative h-5 w-7 shrink-0">
+            <span className="absolute top-0 left-0 size-5 rounded-full border-2 border-[#986371]" />
+            <span className="absolute top-0 right-0 size-5 rounded-full border-2 border-charcoal" />
+          </span>
 
           <span className="font-heading text-base sm:text-lg">
             <strong>NexuCare</strong>{" "}
@@ -46,8 +49,8 @@ export default function Navbar() {
           aria-controls="navegacao-principal"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
-          onClick={() => setIsOpen(!isOpen)}
-          className="grid size-11 place-items-center rounded-xl text-charcoal hover:bg-blush focus-visible:outline-2 focus-visible:outline-offset-2 lg:hidden"
+          onClick={() => setIsOpen((open) => !open)}
+          className="grid size-11 place-items-center rounded-xl text-charcoal hover:bg-blush focus-visible:outline-2 focus-visible:outline-offset-2 xl:hidden"
         >
           {isOpen ? (
             <X aria-hidden="true" className="size-6" />
@@ -59,7 +62,7 @@ export default function Navbar() {
         <nav
           id="navegacao-principal"
           aria-label="Navegação principal"
-          className={`${isOpen ? "flex" : "hidden"} w-full flex-col gap-1 border-t border-soft-border pt-3 mt-3 lg:mt-0 lg:flex lg:w-auto lg:flex-row lg:items-center lg:border-0 lg:pt-0`}
+          className={`${isOpen ? "flex" : "hidden"} col-span-2 mt-3 max-h-[calc(100dvh-5rem)] flex-col gap-1 overflow-y-auto border-t border-soft-border pt-3 xl:col-span-1 xl:mt-0 xl:flex xl:max-h-none xl:flex-row xl:items-center xl:justify-end xl:overflow-visible xl:border-0 xl:pt-0`}
         >
           {links.map(({ href, label }) => (
             <a
