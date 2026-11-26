@@ -19,8 +19,9 @@ export default function Home() {
         <TreatmentsGrid />
         <WhyNexuCare />
         <LocationAndBooking />
-        <Footer />
       </main>
+
+      <Footer />
     </div>
   );
 }
