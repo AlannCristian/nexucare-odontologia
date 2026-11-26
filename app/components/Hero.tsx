@@ -14,8 +14,11 @@ const pillars = [
 
 export default function Hero() {
   return (
-    <section aria-labelledby="hero-title">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+    <section
+      aria-labelledby="hero-title"
+      className="bg-[radial-gradient(ellipse_at_top_right,var(--color-blush),var(--color-cream)_65%)]"
+    >
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 xl:grid-cols-[1.2fr_1fr] xl:gap-16">
         <div>
           <p className="inline-flex rounded-xl bg-blush px-3 py-2 text-sm font-semibold leading-relaxed text-charcoal">
             Atendimento especializado para bebês, crianças e adultos
@@ -25,7 +28,8 @@ export default function Hero() {
             id="hero-title"
             className="mt-5 font-heading text-4xl font-bold leading-tight tracking-tight text-charcoal sm:text-5xl"
           >
-            Cuidado próximo, estética natural e confiança em cada sorriso.
+            Estética natural e cuidado{" "}
+            <span className="italic text-rose">que acolhe</span> cada sorriso.
           </h1>
 
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
