@@ -22,14 +22,13 @@ export default function TreatmentsGrid() {
     <section
       id="especialidades"
       aria-labelledby="treatments-title"
-      className="scroll-mt-36"
+      className="scroll-mt-24"
     >
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#80535e]">
             Especialidades
           </p>
-
           <h2
             id="treatments-title"
             className="mt-3 font-heading text-3xl font-bold tracking-tight text-charcoal sm:text-4xl"
@@ -72,15 +71,15 @@ export default function TreatmentsGrid() {
           {visibleTreatments.map((treatment) => (
             <li
               key={treatment.id}
-              className="rounded-2xl border border-soft-border bg-white p-6 shadow-sm"
+              className="flex flex-col items-start rounded-2xl border border-soft-border bg-white p-6 shadow-sm"
             >
               <h3 className="font-heading text-lg font-bold text-charcoal">
                 {treatment.name}
               </h3>
-              <p className="mt-2 leading-relaxed text-muted">
+              <p className="mt-2 flex-1 leading-relaxed text-muted">
                 {treatment.description}
               </p>
-              <p className="mt-4 inline-flex rounded-full bg-blush px-3 py-1 text-xs font-semibold text-[#80535e]">
+              <p className="mt-4 rounded-full bg-blush px-3 py-1 text-xs font-semibold text-[#80535e]">
                 {treatmentCategories.find(({ id }) => id === treatment.category)?.label}
               </p>
             </li>

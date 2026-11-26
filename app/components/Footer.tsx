@@ -18,7 +18,7 @@ export default function Footer() {
 
           <nav
             aria-label="Navegação do rodapé"
-            className="flex flex-wrap gap-x-5 gap-y-3 text-sm"
+            className="flex flex-wrap items-start gap-x-5 gap-y-3 text-sm"
           >
             <a href="#inicio" className="underline-offset-4 hover:underline">
               Início
@@ -34,6 +34,12 @@ export default function Footer() {
               className="underline-offset-4 hover:underline"
             >
               Localização
+            </a>
+            <a
+              href="#agendamento"
+              className="underline-offset-4 hover:underline"
+            >
+              Agendar Avaliação
             </a>
           </nav>
         </div>

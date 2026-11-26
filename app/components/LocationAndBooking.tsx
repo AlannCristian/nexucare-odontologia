@@ -23,15 +23,18 @@ export default function LocationAndBooking() {
     <section
       id="localizacao"
       aria-labelledby="location-title"
-      className="scroll-mt-36 bg-cream"
+      className="scroll-mt-24 border-t border-soft-border bg-blush/50"
     >
-      <div className="mx-auto grid max-w-6xl items-start gap-8 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:gap-12">
+      <div className="mx-auto grid max-w-6xl items-start gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-2 lg:gap-16">
         <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#80535e]">
+            Localização
+          </p>
           <h2
             id="location-title"
-            className="font-heading text-3xl font-bold text-charcoal sm:text-4xl"
+            className="mt-3 font-heading text-3xl font-bold tracking-tight text-charcoal sm:text-4xl"
           >
-            Localização
+            Venha nos visitar
           </h2>
 
           <address className="mt-4 space-y-2 not-italic leading-relaxed text-muted">
@@ -40,7 +43,7 @@ export default function LocationAndBooking() {
             <p>Telefone e WhatsApp demonstrativos: (91) 00000-0000</p>
           </address>
 
-          <div className="mt-6 rounded-2xl border border-soft-border bg-blush p-6">
+          <div className="mt-6 rounded-2xl border border-soft-border bg-white p-6 shadow-sm">
             <MapPin aria-hidden="true" className="size-7 text-charcoal" />
             <p className="mt-3 font-heading font-bold text-charcoal">
               Capanema–PA
@@ -63,10 +66,13 @@ export default function LocationAndBooking() {
 
         <div
           id="agendamento"
-          className="min-w-0 scroll-mt-36 rounded-2xl border border-soft-border bg-white p-5 shadow-sm sm:p-8"
+          className="min-w-0 scroll-mt-24 rounded-2xl border border-soft-border bg-white p-5 shadow-sm sm:p-8"
         >
-          <h2 className="font-heading text-2xl font-bold text-charcoal sm:text-3xl">
-            Agende uma avaliação
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#80535e]">
+            Agendamento
+          </p>
+          <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-charcoal sm:text-3xl">
+            Agende sua avaliação
           </h2>
           <p
             id="booking-help"

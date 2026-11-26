@@ -36,7 +36,7 @@ export default function Hero() {
     >
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 xl:grid-cols-[1.2fr_1fr] xl:gap-16">
         <div>
-          <p className="inline-flex rounded-xl bg-blush px-3 py-2 text-sm font-semibold leading-relaxed text-charcoal">
+          <p className="inline-flex rounded-full border border-soft-border bg-white/70 px-4 py-1.5 text-sm font-medium text-[#80535e]">
             Atendimento especializado para bebês, crianças e adultos
           </p>
 
@@ -49,20 +49,21 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
-            Da primeira consulta aos cuidados da vida adulta, nossa proposta é
-            ouvir com atenção e explicar cada etapa do atendimento.
+            Da primeira consulta aos cuidados da vida adulta, reunimos prevenção,
+            ortodontia, reabilitação e estética dental com atenção às necessidades
+            de cada pessoa.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#agendamento"
-              className="inline-flex min-h-11 items-center rounded-xl bg-charcoal px-4 py-2 text-sm font-semibold text-white hover:bg-ink focus-visible:outline-2 focus-visible:outline-offset-2"
+              className="inline-flex min-h-13 items-center rounded-2xl bg-charcoal px-6 py-3 text-sm font-semibold text-white hover:bg-ink focus-visible:outline-2 focus-visible:outline-offset-2"
             >
               Agendar Avaliação
             </a>
 
             <a
               href="#especialidades"
-              className="inline-flex min-h-11 items-center rounded-xl border border-charcoal px-4 py-2 text-sm font-semibold text-charcoal hover:bg-blush focus-visible:outline-2 focus-visible:outline-offset-2"
+              className="inline-flex min-h-13 items-center rounded-2xl border border-soft-border bg-white/80 px-6 py-3 text-sm font-semibold text-charcoal hover:bg-blush focus-visible:outline-2 focus-visible:outline-offset-2"
             >
               Ver Especialidades
             </a>
