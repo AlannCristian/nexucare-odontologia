@@ -6,10 +6,26 @@ import {
 } from "lucide-react";
 
 const pillars = [
-  { title: "Atendimento humanizado", icon: HeartHandshake },
-  { title: "Estética natural", icon: Sparkles },
-  { title: "Biossegurança", icon: ShieldCheck },
-  { title: "Clareza no plano", icon: ClipboardList },
+  {
+    title: "Atendimento humanizado",
+    description: "Consultas com tempo para ouvir você e esclarecer suas dúvidas.",
+    icon: HeartHandshake,
+  },
+  {
+    title: "Estética natural",
+    description: "Tratamentos que valorizam os traços do seu sorriso.",
+    icon: Sparkles,
+  },
+  {
+    title: "Biossegurança",
+    description: "Cuidados de higiene e esterilização em cada atendimento.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Clareza no plano",
+    description: "Etapas e custos explicados antes de iniciar o tratamento.",
+    icon: ClipboardList,
+  },
 ];
 
 export default function Hero() {
@@ -26,7 +42,7 @@ export default function Hero() {
 
           <h1
             id="hero-title"
-            className="mt-5 font-heading text-4xl font-bold leading-tight tracking-tight text-charcoal sm:text-5xl"
+            className="mt-5 font-heading text-4xl font-bold leading-[1.08] tracking-tight text-charcoal sm:text-5xl md:text-6xl"
           >
             Estética natural e cuidado{" "}
             <span className="italic text-rose">que acolhe</span> cada sorriso.
@@ -57,20 +73,25 @@ export default function Hero() {
         </div>
 
         <div className="rounded-2xl border border-soft-border bg-white p-6 shadow-sm sm:p-8">
-          <h2 className="font-heading text-xl font-bold text-charcoal">
-            Como cuidamos de você
+          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+            Nossos pilares
           </h2>
 
-          <ul className="mt-5 space-y-4">
-            {pillars.map(({ title, icon: Icon }) => (
-              <li
-                key={title}
-                className="flex items-center gap-3 text-sm font-semibold"
-              >
-                <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-blush text-charcoal">
+          <ul className="mt-1 divide-y divide-soft-border">
+            {pillars.map(({ title, description, icon: Icon }) => (
+              <li key={title} className="flex items-start gap-4 py-4 last:pb-0">
+                <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-blush text-rose">
                   <Icon aria-hidden="true" className="size-5" />
                 </span>
-                {title}
+
+                <div>
+                  <h3 className="font-heading font-semibold text-charcoal">
+                    {title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted">
+                    {description}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
