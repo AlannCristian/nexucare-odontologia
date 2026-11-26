@@ -5,7 +5,6 @@ import TreatmentsGrid from "./components/TreatmentsGrid";
 import WhyNexuCare from "./components/WhyNexuCare";
 import Footer from "./components/Footer";
 import LocationAndBooking from "./components/LocationAndBooking";
-import ConsultationPrep from "./components/ConsultationPrep";
 import JsonLd from "./components/JsonLd";
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
         <AgeGroups />
         <TreatmentsGrid />
         <WhyNexuCare />
-        <ConsultationPrep />
         <LocationAndBooking />
       </main>
 
