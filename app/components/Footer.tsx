@@ -1,53 +1,47 @@
+const links = [
+  { href: "#inicio", label: "Início" },
+  { href: "#familia", label: "Para toda a família" },
+  { href: "#especialidades", label: "Especialidades" },
+  { href: "#sobre", label: "Sobre a clínica" },
+  { href: "#localizacao", label: "Localização" },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-charcoal text-white">
-      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
-        <div className="flex flex-wrap justify-between gap-6">
-          <div>
-            <p className="font-heading text-xl font-bold">
-              NexuCare Odontologia
-            </p>
-            <p className="mt-2 text-sm text-slate-200">
-              Clínica fictícia criada para estudo e portfólio.
-            </p>
-            <p className="mt-2 text-sm text-slate-200">
-              Responsável técnico demonstrativo: Dra. Júlia Prado (personagem
-              fictícia).
-            </p>
-          </div>
+    <footer className="border-t border-soft-border bg-white text-charcoal">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-[3fr_2fr] md:gap-12 lg:py-14">
+        <div>
+          <a href="#inicio" className="inline-flex items-center gap-3 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4">
+            <span aria-hidden="true" className="relative h-5 w-7 shrink-0">
+              <span className="absolute top-0 left-0 size-5 rounded-full border-2 border-[#986371]" />
+              <span className="absolute top-0 right-0 size-5 rounded-full border-2 border-charcoal" />
+            </span>
+            <span className="font-heading text-lg">
+              <strong>NexuCare</strong>{" "}
+              <span className="text-[#80535e]">Odontologia</span>
+            </span>
+          </a>
 
-          <nav
-            aria-label="Navegação do rodapé"
-            className="flex flex-wrap items-start gap-x-5 gap-y-3 text-sm"
-          >
-            <a href="#inicio" className="underline-offset-4 hover:underline">
-              Início
-            </a>
-            <a
-              href="#especialidades"
-              className="underline-offset-4 hover:underline"
-            >
-              Especialidades
-            </a>
-            <a
-              href="#localizacao"
-              className="underline-offset-4 hover:underline"
-            >
-              Localização
-            </a>
-            <a
-              href="#agendamento"
-              className="underline-offset-4 hover:underline"
-            >
-              Agendar Avaliação
-            </a>
-          </nav>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+            Cuidado próximo, estética natural e confiança em cada sorriso.
+          </p>
+          <p className="mt-3 text-xs leading-relaxed text-muted">
+            Clínica fictícia criada para estudo e portfólio.
+          </p>
         </div>
 
-        <p className="mt-8 border-t border-white/20 pt-5 text-xs text-slate-200">
-          © NexuCare Odontologia. Todos os direitos reservados.
-        </p>
+        <nav aria-label="Navegação do rodapé" className="grid grid-cols-2 content-start gap-x-4 gap-y-2 text-sm text-muted">
+          {links.map(({ href, label }) => (
+            <a key={href} href={href} className="inline-flex min-h-10 items-center rounded-sm underline-offset-4 hover:text-charcoal hover:underline focus-visible:outline-2 focus-visible:outline-offset-2">
+              {label}
+            </a>
+          ))}
+        </nav>
       </div>
+
+      <p className="border-t border-soft-border px-5 py-6 text-center text-xs text-muted">
+        © NexuCare Odontologia. Todos os direitos reservados.
+      </p>
     </footer>
   );
 }

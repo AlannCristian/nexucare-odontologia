@@ -26,10 +26,10 @@ export default function AgeGroups() {
     <section
       id="familia"
       aria-labelledby="family-title"
-      className="scroll-mt-24 border-y border-soft-border bg-blush/50"
+      className="scroll-mt-24 bg-white"
     >
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-2xl text-center">
+      <div className="mx-auto max-w-6xl px-5 py-16 lg:py-24">
+        <div className="max-w-[38rem]">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#80535e]">
             Para toda a família
           </p>
@@ -42,17 +42,17 @@ export default function AgeGroups() {
           </h2>
         </div>
 
-        <ul className="mt-10 grid gap-5 md:grid-cols-3">
-          {ageGroups.map(({ title, description, icon: Icon }) => (
+        <ul className="mt-12 grid gap-6 md:grid-cols-3">
+          {ageGroups.map(({ title, description, icon: Icon }, index) => (
             <li
               key={title}
-              className="rounded-2xl border border-soft-border bg-white p-6 shadow-sm sm:p-8"
+              className={`rounded-[1.25rem] border border-soft-border p-6 shadow-sm sm:p-8 ${index === 1 ? "bg-blush" : "bg-cream"}`}
             >
-              <span className="grid size-12 place-items-center rounded-2xl bg-blush text-[#80535e]">
+              <span className="grid size-14 place-items-center rounded-[1.25rem] bg-white shadow-sm text-[#80535e]">
                 <Icon aria-hidden="true" className="size-6" />
               </span>
 
-              <h3 className="mt-5 font-heading text-xl font-bold text-charcoal">
+              <h3 className="mt-6 font-heading text-xl font-semibold text-charcoal">
                 {title}
               </h3>
               <p className="mt-2 leading-relaxed text-muted">{description}</p>
